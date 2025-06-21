@@ -6,15 +6,19 @@ A desktop application built with Python and Tkinter for live network traffic mon
 
 ## Features Showcase
 
-This tool provides multiple views to analyze network traffic from different perspectives.
+This tool provides multiple, powerful views to analyze network traffic from different perspectives.
 
-**1. Protocol Distribution:** See a real-time breakdown of traffic by protocol (TCP, UDP, ICMP).
-![Protocol Distribution View](screenshot-protocols.png)
+**1. Protocol Distribution:** See a real-time breakdown of traffic by protocol. This view provides an immediate understanding of the *type* of traffic on your network. This capture of over 5,200 packets shows a typical internet browsing session, where the tool correctly identifies **TCP** as the dominant protocol (89.9%), used for web traffic, while also categorizing essential **UDP** traffic and other IP-based packets.
+![Protocol Distribution View](screenshot-protocols-distribution.png)
 
-**2. IP Traffic & Hostname Resolution:** View the top IP addresses sending traffic and their resolved hostnames.
+**2. IP Traffic & Hostname Resolution:** View the top IP addresses sending traffic and their resolved hostnames. This powerful feature separates internal network devices (like `192.168.0.1`) from public internet servers. The Hostname column showcases the application's non-blocking architecture:
+-   It displays **`Resolving...`** for new IPs without freezing the UI.
+-   It successfully resolves hostnames like **`...googleusercontent.com`**.
+-   It gracefully handles addresses with no record as **`N/A`**.
+-   It even detects its own meta-traffic to **`ip-api.com`**, proving its comprehensive capture capabilities.
 ![IP Traffic View](screenshot-ip-traffic.png)
 
-**3. Live Geolocation:** Discover the countries your computer is communicating with, updated live.
+**3. Live Geolocation:** Discover the geographical origin of network packets. This unique view aggregates all traffic by country, providing a high-level understanding of your computer's global connections. The example clearly shows a global footprint, with significant traffic from servers located in the **United States, Germany, and India**. This feature makes it easy to visualize where data is coming from and can instantly highlight unexpected international activity.
 ![Geolocation View](screenshot-geolocation.png)
 
 ---
